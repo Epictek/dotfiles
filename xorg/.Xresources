@@ -1,0 +1,51 @@
+! special
+*.foreground:   #d0d0d0
+*.background:   #100f24
+*.cursorColor:  #d0d0d0
+
+! black
+*.color0:       #1d1c45
+*.color8:       #505050
+
+! red
+*.color1:       #b948be
+*.color9:       #b948be
+
+! green
+*.color2:       #acc267
+*.color10:      #acc267
+
+! yellow
+*.color3:       #f2cdf6
+*.color11:      #f2cdf6
+
+! blue
+*.color4:       #3b73bd
+*.color12:      #3b73bd
+
+! magenta
+*.color5:       #e1a3ee
+*.color13:      #e1a3ee
+
+! cyan
+*.color6:       #5cbfd6
+*.color14:      #5cbfd6
+
+! white
+*.color7:       #fefecf
+*.color15:      #fefecf
+
+! Use extended color scheme
+rofi.color-enabled:                  false
+! Color scheme for normal row
+rofi.color-normal:                   argb:0000000, #a2b5df, argb:3affffff, #a2b5df, #02143f
+! Color scheme for urgent row
+rofi.color-urgent:                   argb:0000000, #ff817f, argb:3affffff, #ff817f, #02143f
+! Color scheme for active row
+rofi.color-active:                   argb:0000000, #6aa4ff, argb:3affffff, #6aa4ff, #02143f
+! Color scheme window
+rofi.color-window:                   argb:ee634237, #a2b5df, #a2b5df
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
+
+rofi.width: 				1920

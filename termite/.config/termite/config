@@ -1,0 +1,43 @@
+[options]
+font = Terminus (TTF) 9
+
+[colors]
+
+# special
+foreground      = #d0d0d0
+foreground_bold = #d0d0d0
+cursor          = #d0d0d0
+background      = #100f24
+
+# black
+color0  = #1d1c45
+color8  = #505050
+
+# red
+color1  = #b948be
+color9  = #b948be
+
+# green
+color2  = #acc267
+color10 = #acc267
+
+# yellow
+color3  = #f2cdf6
+color11 = #f2cdf6
+
+# blue
+color4  = #3b73bd
+color12 = #3b73bd
+
+# magenta
+color5  = #e1a3ee
+color13 = #e1a3ee
+
+# cyan
+color6  = #5cbfd6
+color14 = #5cbfd6
+
+# white
+color7  = #fefecf
+color15 = #fefecf
+
