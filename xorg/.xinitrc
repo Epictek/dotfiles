@@ -10,7 +10,8 @@ xrdb .Xresources &
 setxkbmap us &
 xset +fp /home/kieran/.fonts &
 xset fp rehash &
-~/gifbg.sh wall.gif &
+feh --bg-center --no-xinerama wall.png &
+gifbg.sh wall.gif &
 sxhkd &
 compton &
 dunst &
@@ -23,4 +24,7 @@ udiskie --tray &
 pulseaudio -D &
 mpd &
 [[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble &
-#exec bspwm
+mpd-notification -m /home/kieran/Music &
+xset -dpms &
+xset s 0 0 &
+exec bspwm

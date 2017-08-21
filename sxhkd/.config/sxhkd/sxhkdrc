@@ -167,3 +167,18 @@ XF86MonBrightnessUp
 
 XF86MonBrightnessDown
 	xbacklight -dec 20
+
+XF86Tools
+    bash /home/kieran/scripts/toggleoutput.sh
+
+# uguu window
+ctrl + shift + 2
+	uguush -w -o 0x0
+
+# uguu fullscreen
+ctrl + shift + 3
+	uguush -f -o 0x0
+
+# uguu selection
+ctrl + shift + @4
+	uguush -s -o 0x0

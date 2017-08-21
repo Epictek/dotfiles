@@ -35,17 +35,22 @@
 *.color7:       #fefecf
 *.color15:      #fefecf
 
-! Use extended color scheme
-rofi.color-enabled:                  false
-! Color scheme for normal row
-rofi.color-normal:                   argb:0000000, #a2b5df, argb:3affffff, #a2b5df, #02143f
-! Color scheme for urgent row
-rofi.color-urgent:                   argb:0000000, #ff817f, argb:3affffff, #ff817f, #02143f
-! Color scheme for active row
-rofi.color-active:                   argb:0000000, #6aa4ff, argb:3affffff, #6aa4ff, #02143f
-! Color scheme window
-rofi.color-window:                   argb:ee634237, #a2b5df, #a2b5df
-! Separator style (none, dash, solid)
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #100f24, #b948be, #b948be
+rofi.color-normal: #1d1c45, #d0d0d0, #1d1c45, #b948be, #d0d0d0
+rofi.color-active: #1d1c45, #d0d0d0, #1d1c45, #b948be, #d0d0d0
+rofi.color-urgent: #bd2c40, #d0d0d0, #bd2c40, #b948be, #d0d0d0
+
 rofi.separator-style:                solid
 
 rofi.width: 				1920
+
+Xft.autohint: 1
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault

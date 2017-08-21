@@ -11,6 +11,7 @@ set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set showmatch
 autocmd FileType php LanguageClientStart
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>

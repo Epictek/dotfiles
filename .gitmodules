@@ -1,0 +1,3 @@
+[submodule "zprezto/.zprezto"]
+	path = zprezto/.zprezto
+	url = https://github.com/Epictek/prezto

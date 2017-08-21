@@ -10,8 +10,8 @@ linecolor = #b948be
 border-color = #b948be
 
 [bar/top]
-#monitor = HDMI-0
-monitor = DP-0
+monitor = HDMI-0
+#monitor = DP-0
 monitor-fallback = DVI-I-0
 width = 100%
 height = 20 
@@ -33,7 +33,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = terminus:size=9;1
+font-0 = Terminus (TTF):size=9;1
 font-1 = icomoon:size=11;2
 font-2 = Material Icons:size=11;2
 
@@ -63,11 +63,12 @@ spacing = ${bar/top.spacing}
 lineheight = ${bar/top.lineheight}
 module-margin-left = 0
 
-font-0 = terminus:size=9;3
+font-0 = Terminus (TTF):size=9;3
 font-1 = ${bar/top.font-1}
 font-2 = ${bar/top.font-2}
 
 modules-left = bspwm
+modules-center = artic
 modules-right = memory cpu date powermenu
 
 wm-restack = ${bar/top.wm-restack}
@@ -92,12 +93,40 @@ lineheight = ${bar/top.lineheight}
 module-margin-left = 0
 #module-margin-right = ${bar/top.module_margin_right}
 
+font-0 = Terminus (TTF):size=9;3 
+font-1 = ${bar/top.font-1}
+font-2 = ${bar/top.font-2}
+
+modules-left = bspwm
+
+wm-restack = ${bar/top.wm-restack}
+
+
+[bar/tv]
+monitor = DP-0
+bottom = true
+width = 100%
+height = ${bar/top.height}
+
+background = ${bar/top.background}
+foreground = ${bar/top.foreground}
+linecolor = ${bar/top.linecolor}
+
+border-top-size = 2
+border-top-color = #634237
+
+spacing = ${bar/top.spacing}
+lineheight = ${bar/top.lineheight}
+#padding-right = ${bar/top.padding_right}
+module-margin-left = 0
+#module-margin-right = ${bar/top.module_margin_right}
+
 font-0 = terminus:size=9;3
 font-1 = ${bar/top.font-1}
 font-2 = ${bar/top.font-2}
 
 modules-left = bspwm
-modules-right = temperature memory cpu battery date powermenu
+modules-right = temperature memory cpu date powermenu
 
 wm-restack = ${bar/top.wm-restack}
 
@@ -382,13 +411,19 @@ margin-bottom = 5
 [module/kitsu]
 type = custom/script
 
-exec = curl -s 'https://kitsu.io/api/edge/feeds/notifications/16?include=actor%2Ctarget.post&page%5Blimit%5D=30' | jq -r ".meta.unseenCount"
-
+exec = curl -H "Authorization: Bearer $KITSU_TOKEN" -H "Accept: application/vnd.api+json" -H "Content-Type: application/vnd.api+json"  -s 'https://kitsu.io/api/edge/feeds/notifications/16' | jq -r ".meta.unseenCount"
 label =  %output%
 
 
 click-left = xdg-open "https://kitsu.io/notifications"
 
 interval = 10
+
+
+[module/artic]
+type = custom/script
+
+exec = python3 /home/kieran/projects/artic-bar/main.py
+interval = 0.1
 
 ; vim:ft=dosini
