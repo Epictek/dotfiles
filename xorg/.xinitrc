@@ -10,8 +10,8 @@ xrdb .Xresources &
 setxkbmap us &
 xset +fp /home/kieran/.fonts &
 xset fp rehash &
+~/.bin/gifbg.sh wall.gif &
 feh --bg-center --no-xinerama wall.png &
-gifbg.sh wall.gif &
 sxhkd &
 compton &
 dunst &
