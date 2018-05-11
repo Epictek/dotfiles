@@ -1,3 +1,5 @@
+Xcursor.size: 16
+
 ! special
 *.foreground:   #d0d0d0
 *.background:   #100f24
@@ -46,7 +48,7 @@ rofi.color-urgent: #bd2c40, #d0d0d0, #bd2c40, #b948be, #d0d0d0
 
 rofi.separator-style:                solid
 
-rofi.width: 				1920
+rofi.width: 				800
 
 Xft.autohint: 1
 Xft.antialias: 1

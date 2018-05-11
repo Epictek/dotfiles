@@ -1,3 +1,3 @@
-[submodule "zprezto/.zprezto"]
-	path = zprezto/.zprezto
-	url = https://github.com/Epictek/prezto
+[submodule "scripts/.bin/uguush"]
+	path = scripts/.bin/uguush
+	url = https://github.com/jschx/uguush.git

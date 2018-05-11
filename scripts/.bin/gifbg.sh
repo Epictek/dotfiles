@@ -7,7 +7,7 @@ if [ $# -ne 1 ]; then
 fi
 
 #get screen resolution
-SCRH=`xrandr | awk '/current/ { print $8 }'`
+SCRH=1080
 SCRW=`xrandr | awk '/current/ { print $10 }'`
 SCRW=${SCRW%\,}
 
@@ -17,7 +17,8 @@ IMGH=${IMGHW%x*}
 IMGW=${IMGHW#*x}
 
 #calculate position
-POSH=$((($SCRH/2)-($IMGH/2)))
+#POSH=$((($SCRH/2)-($IMGH/2)))
+POSH=0
 POSW=$((($SCRW/2)-($IMGW/2)))
 
 xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -- gifview -w WID $1 -a

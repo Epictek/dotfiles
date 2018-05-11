@@ -1,429 +1,314 @@
 [colors]
 background = #100f24
 background-alt = #1d1c45
-alert = #b948be
+modules-background = ${colors.background-alt}
 foreground = #d0d0d0
 foreground-alt = #b948be
+
+alert = #b948be
+
+
 primary = #b948be
 secondary = #3b73bd
 linecolor = #b948be
 border-color = #b948be
 
-[bar/top]
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 100
+screenchange-reload = true
+
+
+[bar/main]
 monitor = HDMI-0
-#monitor = DP-0
 monitor-fallback = DVI-I-0
-width = 100%
-height = 20 
-offset-x = 0
-offset-y = 0
-
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-linecolor = ${colors.linecolor}
-
-border-bottom-size = 2
-border-color = ${colors.border-color}
-
-spacing = 1
-lineheight = 1
-padding-left = 0
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Terminus (TTF):size=9;1
-font-1 = icomoon:size=11;2
-font-2 = Material Icons:size=11;2
-
-modules-left = xwindow 
-modules-center = mpd
-modules-right = kitsu pavolume
-tray-position = right
 
 wm-restack = bspwm
 
-
-[bar/bottom]
-monitor = ${bar/top.monitor}
-monitor-fallback = DVI-I-0
-bottom = true
 width = 100%
-height = ${bar/top.height}
+height = 23
+
+offset-x = 0
+offset-y = 0
+
+radius = 0.0
+bottom = true
+fixed-center = true
+
+enable-ipc = true
+
+modules-left = bspwm xwindow
+modules-center = date
+modules-right = mpd keyboard temperature pulseaudio
+
+separator =
+line-size = 1
+
+module-margin-left  = 0
+module-margin-right = 0
+
+border-top-size = 1
+border-color = #000000
+
+padding-left = 0
+padding-right = 0
+
+font-0 = "InputMono Nerd Font Mono:size=10;2"
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-linecolor = ${colors.linecolor}
 
-border-top-size = 2
-border-color = ${colors.border-color} 
-
-spacing = ${bar/top.spacing}
-lineheight = ${bar/top.lineheight}
-module-margin-left = 0
-
-font-0 = Terminus (TTF):size=9;3
-font-1 = ${bar/top.font-1}
-font-2 = ${bar/top.font-2}
-
-modules-left = bspwm
-modules-center = artic
-modules-right = memory cpu date powermenu
-
-wm-restack = ${bar/top.wm-restack}
+click-left =
+click-middle =
+click-right =
+scroll-up =
+scroll-down =
+double-click-left =
+double-click-middle =
+double-click-right =
+cursor-click =
+cursor-scroll =
 
 
-[bar/bottom-right]
+tray-position = right
+
+tray-detached = false
+
+tray-maxsize = 16
+
+tray-transparent = false
+
+tray-background = ${colors.background}
+
+tray-offset-x = 0
+tray-offset-y = 0
+
+tray-padding = 0
+
+tray-scale = 1.0
+
+
+
+[bar/second_monitor]
 monitor = DVI-I-0
-bottom = true
+
+wm-restack = bspwm
+
 width = 100%
-height = ${bar/top.height}
+height = 23
 
-background = ${bar/top.background}
-foreground = ${bar/top.foreground}
-linecolor = ${bar/top.linecolor}
+offset-x = 0
+offset-y = 0
 
-border-top-size = 2
-border-top-color = #634237
-
-spacing = ${bar/top.spacing}
-lineheight = ${bar/top.lineheight}
-#padding-right = ${bar/top.padding_right}
-module-margin-left = 0
-#module-margin-right = ${bar/top.module_margin_right}
-
-font-0 = Terminus (TTF):size=9;3 
-font-1 = ${bar/top.font-1}
-font-2 = ${bar/top.font-2}
-
-modules-left = bspwm
-
-wm-restack = ${bar/top.wm-restack}
-
-
-[bar/tv]
-monitor = DP-0
+radius = 0.0
 bottom = true
-width = 100%
-height = ${bar/top.height}
+fixed-center = true
 
-background = ${bar/top.background}
-foreground = ${bar/top.foreground}
-linecolor = ${bar/top.linecolor}
+enable-ipc = true
 
-border-top-size = 2
-border-top-color = #634237
+modules-left = bspwm xwindow
 
-spacing = ${bar/top.spacing}
-lineheight = ${bar/top.lineheight}
-#padding-right = ${bar/top.padding_right}
-module-margin-left = 0
-#module-margin-right = ${bar/top.module_margin_right}
+separator =
+line-size = 1
 
-font-0 = terminus:size=9;3
-font-1 = ${bar/top.font-1}
-font-2 = ${bar/top.font-2}
+module-margin-left  = 0
+module-margin-right = 0
 
-modules-left = bspwm
-modules-right = temperature memory cpu date powermenu
+border-top-size = 1
+border-color = #000000
 
-wm-restack = ${bar/top.wm-restack}
+padding-left = 0
+padding-right = 0
+
+font-0 = "InputMono Nerd Font Mono:size=10;2"
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+click-left =
+click-middle =
+click-right =
+scroll-up =
+scroll-down =
+double-click-left =
+double-click-middle =
+double-click-right =
+cursor-click =
+cursor-scroll =
+
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+format-prefix = "  "
+label = " %title:0:45:...% "
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-background = ${colors.modules-background}
+format-prefix-background = ${colors.primary}
 
 [module/bspwm]
 type = internal/bspwm
 
-format = <label-state> <label-mode>
+pin-workspaces = true
+inline-mode = false
 
-label-focused = %icon% %name%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+enable-click = true
+enable-scroll = false
+reverse-scroll = false
 
-label-occupied = %icon% %name%
-label-occupied-padding = 2
+format = <label-mode><label-state>
 
-label-urgent = %icon% %name%!
+
+label-focused = "  "
+label-focused-background = ${colors.primary}
+
+label-occupied = "  "
+label-occupied-background = ${colors.primary}
+
+label-urgent = "  "
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
 
-label-empty = %icon% %name%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty = "  "
+label-empty-background = ${colors.primary}
 
-[module/mpd]
-type = internal/mpd
-format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-seekb = 
-icon-seekf = 
-icon-random = 
-icon-repeat = 
-icon-repeatone = 🔂
+;label-monocle-background = ${colors.modules-background}
+;label-tiled-background = ${colors.modules-background}
+;label-fullscreen-background = ${colors.background-alt
+;label-floating-background = ${colors.background-alt}
 
-label-song-maxlen = 25
-label-song-ellipsis = true
 
-; Only applies if <bar-progress> is used
-bar-progress-width = 45
-bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
+;label-monocle = "  "
+;label-tiled = "  "
+;label-fullscreen = 
+;label-floating = "  "
+;label-pseudotiled = PT
+;label-locked = LO
+;label-sticky = ST
+;label-private = PR
 
-[module/xbacklight]
-type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
 
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
 
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
 
-[module/cpu]
-type = internal/cpu
-; Available tags:
-;   <label> (default)
-;   <bar-load>
-;   <ramp-load>
-;   <ramp-coreload>
-format = <label> <ramp-coreload>
 
-; Available tokens:
-;   %percentage% (default) - total cpu load
-;   %percentage-cores% - load percentage for each core
-;   %percentage-core[1-9]% - load percentage for specific core
-label =  CPU %percentage%% |
 
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %gb_used% / %gb_total% | 
 
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
+[module/keyboard]
+type = internal/xkeyboard
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+format = <label-layout><label-indicator>
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-indicator = " %name% "
+label-indicator-background = ${colors.modules-background}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+label-layout = " %layout% "
+label-layout-background = ${colors.background-alt}
 
-[module/eth]
-type = internal/network
-interface = enp11s0
-interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
-[module/date]
-type = internal/date
-interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
-
-label = %date% %time%
-
-[module/volume]
-type = internal/volume
-
-master-mixer = Master
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/temperature]
 type = internal/temperature
+interval = 3
+
 thermal-zone = 0
-warn-temperature = 60
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+warn-temperature = 75
+units = true
 
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+label = " %temperature-c% "
+label-warn = " %temperature-c%  "
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+label-background = ${colors.modules-background}
+label-warn-background = ${colors.modules-background}
 
-[module/powermenu]
-type = custom/menu
+format = <ramp><label>
+format-warn = <ramp><label-warn>
 
-format-spacing = 1
+ramp-0 = "  "
+ramp-1 = "  "
+ramp-2 = "  "
+ramp-3 = "  "
+ramp-4 = "  "
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+ramp-background = ${colors.background-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-
-[module/pavolume]
-type = custom/script
-interval = 2
-label =  %output%
-exec = ~/.config/polybar/pavolume.sh
-click-right = exec pavucontrol
-click-left = ~/.config/polybar/pavolume.sh --togmute
-scroll-up = ~/.config/polybar/pavolume.sh --up
-scroll-down = ~/.config/polybar/pavolume.sh --down
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
-[module/kitsu]
-type = custom/script
-
-exec = curl -H "Authorization: Bearer $KITSU_TOKEN" -H "Accept: application/vnd.api+json" -H "Content-Type: application/vnd.api+json"  -s 'https://kitsu.io/api/edge/feeds/notifications/16' | jq -r ".meta.unseenCount"
-label =  %output%
+enable-click = false
+enable-scroll = false
 
 
-click-left = xdg-open "https://kitsu.io/notifications"
 
-interval = 10
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted = 🔇 muted
+label-muted-foreground = #66
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 
-[module/artic]
-type = custom/script
 
-exec = python3 /home/kieran/projects/artic-bar/main.py
-interval = 0.1
+[module/date]
+type = internal/date
 
-; vim:ft=dosini
+interval = 1.0
+
+date = %a, %d/%m/%Y (%b)
+time = %I:%M%p
+
+;label-icon = " %time% - %date%"
+label = " %time% - %date%"
+format = <label>
+
+;label-icon-background = ${colors.modules-background}
+;label-background = ${colors.primary}
+;format-background = ${colors.primary}
+
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+password =
+interval = 1
+
+
+format-online = <icon-stop><label-song>
+format-playing = <icon-stop><label-song>
+format-paused =
+format-stopped =
+
+
+label-song = " %artist:0:15:...% - %title:0:25:...% "
+label-song-background = ${colors.modules-background}
+
+icon-play-background = ${colors.primary}
+icon-pause-background = ${colors.primary}
+icon-stop-background = ${colors.primary}
+
+
+icon-stop = "  "

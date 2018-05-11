@@ -4,19 +4,17 @@
 
 # terminal emulator
 super + Return
-	termite
+	alacritty
 
 # program launcher
 super + space
-        rofi -show run -width 1920 -location 0 -lines 19 -bw 0 -font "Noto Sans Ui 16" -padding 600 -opacity 80
+        rofi -show run
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-
 #
 # bspwm hotkeys
 #
-
 super + p
 	rofi-pass
 
