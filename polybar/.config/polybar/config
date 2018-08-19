@@ -45,7 +45,7 @@ enable-ipc = true
 
 modules-left = bspwm xwindow
 modules-center = date
-modules-right = mpd keyboard temperature pulseaudio
+modules-right = keyboard keyboard_layer  temperature pulseaudio
 
 separator =
 line-size = 1
@@ -270,7 +270,19 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
+[module/keyboard_layer]
+type = custom/ipc
 
+label-background = ${colors.modules-background}
+
+hook-0 = echo "QWERTY"
+hook-1 = echo "CAPS"
+hook-2 = echo "NUM"
+hook-3 = echo "SYMBOLS"
+hook-4 = echo "NAV"
+hook-5 = echo "MACROS"
+
+interval = 1
 
 [module/date]
 type = internal/date

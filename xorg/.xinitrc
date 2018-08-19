@@ -6,8 +6,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
     unset f
 fi
 
+
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
 # Gif Wallpaper
-~/.bin/gifbg.sh ~/dots/wallpaper/wall.gif &
+gifbg.sh ~/dots/wallpaper/wall.gif &
 feh --bg-center --no-xinerama wall.png &
 
 # X Colouts
@@ -19,11 +23,6 @@ setxkbmap us &
 #Load custom user fonts
 xset +fp /home/kieran/.fonts &
 xset fp rehash &
-
-#Load bars
-polybar top &
-polybar bottom &
-polybar bottom-right &
 
 # Compisitioning
 compton &
@@ -56,5 +55,9 @@ polybar second_monitor &
 
 # Keybinds
 sxhkd &
+setxkbmap -option compose:caps &
+
+#File syncing
+syncthing &
 
 exec bspwm

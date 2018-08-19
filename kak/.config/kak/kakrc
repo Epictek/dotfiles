@@ -1,0 +1,28 @@
+eval %sh{kak-lsp --kakoune}
+
+#addhl global/ wrap
+
+#addhl global/ number_lines
+
+
+hook global InsertChar \t %{ exec -draft -itersel h@ }
+set global tabstop 4
+set global indentwidth 4
+
+
+#hook global InsertChar \t %{
+#      exec -draft -itersel h@
+#}
+
+hook global WinSetOption filetype=nim %{
+   set buffer lintcmd "sh -c 'cp -f $0 $0.nim;nim --stdout --colors:off --hints:off --path:$(dirname ${kak_buffile}) check $0 | sed \"s/(/:/;s/, /:/;s/)/:/\" | sed \":a;N;/\n[buf.nim]/!s/\n//;ta;P;D\"'"
+   lint-enable
+    set global tabstop 2
+    set global indentwidth 2
+
+}
+
+
+# copy paste to system clipboard
+map global user y '<a-|>xsel --input --clipboard<ret>'
+map global user p '<a-!>xsel --output --clipboard<ret>'

@@ -1,1 +1,3 @@
 rofi.theme: oxide
+rofi.theme: /usr/share/rofi/themes/sidebar.rasi
+rofi.show-icons: true
